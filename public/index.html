@@ -4,11 +4,59 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <style>
+      textarea {
+        width: 100%;
+      }
+    </style>
     <title>Express | Martian Robot</title>
   </head>
   <body>
-    <form>
-      <textarea id="textarea" rows="10" cols="30" name="input" maxlength="100">
+    <nav class="navbar navbar-dark bg-dark mb-3">
+      <a class="navbar-brand" href="/">Martian Robot</a>
+    </nav>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          Input:<br />
+          <textarea
+            id="textarea"
+            rows="10"
+            name="input"
+            maxlength="100"
+          ></textarea
+          ><br />
+          <label>Count:</label><span id="count">0</span> <br /><button
+            class="btn btn-info btn"
+            type="button"
+            id="submit"
+          >
+            Submit
+          </button>
+        </div>
+
+        <div class="col-md-4">
+          Output:<br />
+          <textarea
+            style="background-color: black; color: greenyellow"
+            readonly
+            id="textarea2"
+            rows="10"
+            name="input"
+            maxlength="100"
+          ></textarea>
+        </div>
+        <div class="col-md-4">
+          Clipoard:<br />
+          <textarea id="bar" rows="10">
 5 3
 1 1 E
 RFRFRFRF
@@ -16,12 +64,16 @@ RFRFRFRF
 FRRFLLFFRRFLL
 0 3 W
 LLFFFLFLFL</textarea
-      ><br />
-      <label>Count:</label><span id="countInput">0</span>
-      <br />
-      <button type="button" id="submit">Submit</button>
-    </form>
+          >
+          <button class="btn btn-warning" data-clipboard-target="#bar">
+            Copy to clipboard
+          </button>
+        </div>
+      </div>
+    </div>
   </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="./custom.js"></script>
 </html>

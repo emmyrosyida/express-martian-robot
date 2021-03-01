@@ -44,7 +44,12 @@ router.post("/", (req, res) => {
         currentPos = { ...nextPos };
       }
 
-      if (currentPos.x > grid.y || currentPos.y > grid.y) {
+      if (
+        currentPos.x > grid.y ||
+        currentPos.y > grid.y ||
+        currentPos.x < 0 ||
+        currentPos.y < 0
+      ) {
         //check robot scent
         let scent = isScented.some((e) => {
           return e.x == lastPos.x && e.y == lastPos.y;
